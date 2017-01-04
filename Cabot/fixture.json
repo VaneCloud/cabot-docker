@@ -3,7 +3,7 @@
     "pk": 1,
     "model": "auth.user",
     "fields": {
-      "username": "docker",
+      "username": "admin",
       "first_name": "",
       "last_name": "",
       "is_active": true,
@@ -12,8 +12,8 @@
       "last_login": "2014-04-14T15:29:36.813Z",
       "groups": [],
       "user_permissions": [],
-      "password": "pbkdf2_sha256$10000$oOHx8UaaaUGV$hXqEiaGKCttreiE30rabJ2aaf5ggw8W++ggC6FeCdz8=",
-      "email": "docker@example.com",
+      "password": "pbkdf2_sha256$12000$wyD4I0ZOaZuR$SR80eJ0Nzk4nH6HuCC4b3eDluDixdQ3hFmHR/zgtiwM=",
+      "email": "xilin@vanecloud.com",
       "date_joined": "2014-04-14T15:29:36.813Z"
     }
   }

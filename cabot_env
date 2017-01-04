@@ -1,31 +1,34 @@
-# Hipchat integration
-HIPCHAT_ALERT_ROOM=__FIX_ME__
-HIPCHAT_API_KEY=__FIX_ME__
+ # Hipchat integration
+ HIPCHAT_ALERT_ROOM=""
+ HIPCHAT_API_KEY=""
 
-# Hostname of your Graphite server instance
-GRAPHITE_API=__FIX_ME__
-GRAPHITE_USER=__FIX_ME__
-GRAPHITE_PASS=__FIX_ME__
+ # Hostname of your Graphite server instance
+ GRAPHITE_API=http://192.168.20.124:8008
+ GRAPHITE_USER=admin
+ GRAPHITE_PASS=admin
 
-# URL of calendar to synchronise rota with
-CALENDAR_ICAL_URL=http://www.google.com/calendar/ical/example.ics
+ # URL of calendar to synchronise rota with
+ # CALENDAR_ICAL_URL=http://www.google.com/calendar/ical/example.ics
 
-# Mail Settings
-SES_HOST=__FIX_ME__
-SES_USER=__FIX_ME__
-SES_PASS=__FIX_ME__
-SES_PORT=__FIX_ME__
-CABOT_FROM_EMAIL=__FIX_ME__
-# Default Mail-Backend is django_smtp_ssl.SSLEmailBackend
-# only uncomment if you want simple SMTP without encryption
-#SES_BACKEND=django.core.mail.backends.smtp.EmailBackend
+ # Mail Settings
+ SES_HOST=smtp.mxhichina.com
+ SES_USER=user@vanecloud.com
 
-# Jenkins integration
-JENKINS_API=_FIX_ME__
-JENKINS_USER=_FIX_ME__
-JENKINS_PASS=_FIX_ME__
+ # password need to specify
+ SES_PASS=password
+ SES_PORT=25
+ EMAIL_USE_TLS=False
+ CABOT_FROM_EMAIL=user@vanecloud.com
+ # Default Mail-Backend is django_smtp_ssl.SSLEmailBackend
+ # only uncomment if you want simple SMTP without encryption
+ SES_BACKEND=django.core.mail.backends.smtp.EmailBackend
 
-# Twilio integration for SMS and telephone alerts
-TWILIO_ACCOUNT_SID=_FIX_ME__
-TWILIO_AUTH_TOKEN=_FIX_ME__
-TWILIO_OUTGOING_NUMBER=_FIX_ME__
+ # Jenkins integration
+ JENKINS_API=""
+ JENKINS_USER=""
+ JENKINS_PASS=""
+
+ # Twilio integration for SMS and telephone alerts
+ TWILIO_ACCOUNT_SID=""
+ TWILIO_AUTH_TOKEN=""
+ TWILIO_OUTGOING_NUMBER=""

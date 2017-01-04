@@ -5,6 +5,22 @@ Docker Images to build full [cabot](https://github.com/arachnys/cabot) environme
 
 *Still Not Ready for Production*
 
+vanecloud
+============
+
+```
+$ pwd
+/root/cabot-docker
+
+$ mkdir /root/cabot-docker/Cabot/cabot-app
+
+$ git clone https://github.com/VaneCloud/cabot.git /root/cabot-docker/Cabot/cabot-app
+
+$ docker-compose build
+
+$ docker-compose run
+```
+
 Overview
 ============
 

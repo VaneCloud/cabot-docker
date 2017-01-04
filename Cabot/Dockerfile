@@ -1,6 +1,6 @@
 # Cabot Dockerfile
 #
-# https://github.com/shoonoise/cabot-docker
+# fork by https://github.com/shoonoise/cabot-docker
 #
 # VERSION 1.1
 
@@ -8,21 +8,31 @@ FROM ubuntu:trusty
 MAINTAINER Alexander Kushnarev <avkushnarev@gmail.com>
 
 # Prepare
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y build-essential nodejs libpq-dev python-dev npm git curl libldap2-dev libsasl2-dev iputils-ping
 
-RUN curl -OL https://bootstrap.pypa.io/get-pip.py
-RUN python get-pip.py
+RUN curl -L 112.64.137.178/get-pip.py | python
+RUN mkdir /root/.pip
+ADD pip.conf /root/.pip/pip.conf
+
+RUN mkdir /cabot
+WORKDIR /cabot
+
+ADD requirements.txt .
+ADD cabot-app/cabot/requirements-plugins.txt .
+# Install dependencies
+RUN pip install -r requirements.txt
+RUN pip install -r requirements-plugins.txt
+
+RUN npm install --no-color -g coffee-script less@1.3 --registry=https://registry.npm.taobao.org
 
 # Deploy cabot
-RUN git clone https://github.com/arachnys/cabot.git /cabot
+#RUN git clone http://gitlab.vanecloud.com/vanecloud/cabot.git /cabot
+ADD cabot-app/cabot /cabot/
 ADD fixture.json /cabot/
 ADD run.sh /cabot/
 ADD gunicorn.conf /cabot/gunicorn.conf
-
-# Install dependencies
-RUN pip install -e /cabot/
-RUN npm install --no-color -g coffee-script less@1.3 --registry http://registry.npmjs.org/
 
 # Set env var
 ENV PATH $PATH:/cabot/
