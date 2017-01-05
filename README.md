@@ -18,7 +18,7 @@ $ git clone https://github.com/VaneCloud/cabot.git /root/cabot-docker/Cabot/cabo
 
 $ docker-compose build
 
-$ docker-compose run
+$ docker-compose up
 ```
 
 Overview
